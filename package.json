@@ -1,5 +1,5 @@
 {
-  "name": "meta-trx-matic-mainnet",
+  "name": "meta-trx-graph",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
