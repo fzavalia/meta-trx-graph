@@ -3,10 +3,10 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum
-    name: MetaTxForwarder
+    name: ERC721CollectionFactoryV3
     network: matic
     source:
-      abi: MetaTxForwarder
+      abi: ERC721CollectionFactoryV3
       address: "0x0baBda04f62C549A09EF3313Fe187f29c099FF3C"
       startBlock: 32900000
     mapping:
@@ -16,9 +16,28 @@ dataSources:
       entities:
         - MetaTransaction
       abis:
-        - name: MetaTxForwarder
-          file: ./abis/MetaTxForwarder.json
-      callHandlers:
-        - function: forwardMetaTx(address,bytes)
-          handler: handleForwardMetaTx
-      file: ./src/meta-tx-forwarder.ts
+        - name: ERC721CollectionFactoryV3
+          file: ./abis/ERC721CollectionFactoryV3.json
+      eventHandlers:
+        - event: ProxyCreated(indexed address,bytes32)
+          handler: handleProxyCreated
+      file: ./src/erc721-collection-factory-v3.ts
+templates:
+  - name: ERC721CollectionV2
+    kind: ethereum/contract
+    network: matic
+    source:
+      abi: ERC721CollectionV2
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - MetaTransaction
+      abis:
+        - name: ERC721CollectionV2
+          file: ./abis/ERC721CollectionV2.json
+      eventHandlers:
+        - event: MetaTransactionExecuted(address,address,bytes)
+          handler: handleMetaTransactionExecuted
+      file: ./src/erc721-collection-v2.ts
