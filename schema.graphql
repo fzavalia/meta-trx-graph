@@ -1,9 +1,7 @@
 type MetaTransaction @entity {
   id: ID!
   contractName: ContractName!
-  contractAddress: Bytes!
   userAddress: Bytes!
-  relayerAddress: Bytes!
   timestamp: BigInt!
 }
 
