@@ -1,7 +1,8 @@
 {
   "matic": {
-    "MANAToken": {
-      "address": "0xA1c57f48F0Deb89f569dFbE6E2B7f46D33606fD4"
+    "MetaTxForwarder": {
+      "address": "0x0baBda04f62C549A09EF3313Fe187f29c099FF3C",
+      "startBlock": 32900000
     }
   }
 }

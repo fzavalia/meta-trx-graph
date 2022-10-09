@@ -4,7 +4,8 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ meta-trx-matic-mainnet",
+    "deploy": "graph deploy --product hosted-service fzavalia/meta-trx-matic-mainnet",
+    "auth": "graph auth --product hosted-service",
     "create-local": "graph create --node http://localhost:8020/ meta-trx-matic-mainnet",
     "remove-local": "graph remove --node http://localhost:8020/ meta-trx-matic-mainnet",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 meta-trx-matic-mainnet",

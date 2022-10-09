@@ -1,6 +1,9 @@
-type ExampleEntity @entity {
+type MetaTransaction @entity {
   id: ID!
-  count: BigInt!
-  _new: Bytes! # address
-  _old: Bytes! # address
+  timestamp: BigInt!
+}
+
+type Count @entity {
+  id: ID!
+  metaTransactions: BigInt!
 }

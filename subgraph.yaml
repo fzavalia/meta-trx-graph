@@ -1,26 +1,24 @@
-specVersion: 0.0.1
+specVersion: 0.0.4
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum
-    name: MANAToken
+    name: MetaTxForwarder
     network: matic
     source:
-      address: "0xA1c57f48F0Deb89f569dFbE6E2B7f46D33606fD4"
-      abi: MANAToken
+      abi: MetaTxForwarder
+      address: "0x0baBda04f62C549A09EF3313Fe187f29c099FF3C"
+      startBlock: 32900000
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
-        - ProxyOwnerUpdate
-        - ProxyUpdated
+        - MetaTransaction
       abis:
-        - name: MANAToken
-          file: ./abis/MANAToken.json
-      eventHandlers:
-        - event: ProxyOwnerUpdate(address,address)
-          handler: handleProxyOwnerUpdate
-        - event: ProxyUpdated(indexed address,indexed address)
-          handler: handleProxyUpdated
-      file: ./src/mana-token.ts
+        - name: MetaTxForwarder
+          file: ./abis/MetaTxForwarder.json
+      callHandlers:
+        - function: forwardMetaTx(address,bytes)
+          handler: handleForwardMetaTx
+      file: ./src/meta-tx-forwarder.ts
