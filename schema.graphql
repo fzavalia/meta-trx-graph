@@ -1,6 +1,5 @@
 type MetaTransaction @entity {
   id: ID!
-  contractName: ContractName!
   userAddress: Bytes!
   timestamp: BigInt!
 }
@@ -8,8 +7,4 @@ type MetaTransaction @entity {
 type Count @entity {
   id: ID!
   metaTransactions: BigInt!
-}
-
-enum ContractName {
-  ERC721CollectionV2
 }

@@ -14,7 +14,6 @@ export function handleMetaTransactionExecuted(event: MetaTransactionExecuted): v
 
   let metaTransaction = new MetaTransaction(count.metaTransactions.toString());
 
-  metaTransaction.contractName = "ERC721CollectionV2";
   metaTransaction.userAddress = event.params.userAddress;
   metaTransaction.timestamp = event.block.timestamp;
 
