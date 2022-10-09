@@ -1,0 +1,26 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: MANAToken
+    network: matic
+    source:
+      address: "0xA1c57f48F0Deb89f569dFbE6E2B7f46D33606fD4"
+      abi: MANAToken
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - ProxyOwnerUpdate
+        - ProxyUpdated
+      abis:
+        - name: MANAToken
+          file: ./abis/MANAToken.json
+      eventHandlers:
+        - event: ProxyOwnerUpdate(address,address)
+          handler: handleProxyOwnerUpdate
+        - event: ProxyUpdated(indexed address,indexed address)
+          handler: handleProxyUpdated
+      file: ./src/mana-token.ts
