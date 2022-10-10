@@ -13,4 +13,6 @@ type Count @entity {
 enum ContractName {
   CollectionV2
   MANAToken
+  Committee
+  MarketplaceV2
 }
