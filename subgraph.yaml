@@ -102,6 +102,26 @@ dataSources:
         - event: MetaTransactionExecuted(address,address,bytes)
           handler: handleMetaTransactionExecuted
       file: ./src/bid.ts
+  - kind: ethereum
+    name: ThirdPartyRegistry
+    network: matic
+    source:
+      abi: ThirdPartyRegistry
+      address: "0x1C436C1EFb4608dFfDC8bace99d2B03c314f3348"
+      startBlock: 32800000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - MetaTransaction
+      abis:
+        - name: ThirdPartyRegistry
+          file: ./abis/ThirdPartyRegistry.json
+      eventHandlers:
+        - event: MetaTransactionExecuted(address,address,bytes)
+          handler: handleMetaTransactionExecuted
+      file: ./src/third-party-registry.ts
 templates:
   - name: CollectionV2
     kind: ethereum/contract

@@ -16,4 +16,5 @@ enum ContractName {
   Committee
   MarketplaceV2
   Bid
+  ThirdPartyRegistry
 }
