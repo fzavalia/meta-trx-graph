@@ -4,6 +4,10 @@
       "address": "0x3195e88aE10704b359764CB38e429D24f1c2f781",
       "startBlock": 28121692
     },
+    "CollectionFactoryV2": {
+      "address": "0xB549B2442b2BD0a53795BC5cDcBFE0cAF7ACA9f8",
+      "startBlock": 15202563
+    },
     "MANAToken": {
       "address": "0xA1c57f48F0Deb89f569dFbE6E2B7f46D33606fD4",
       "startBlock": 32800000
