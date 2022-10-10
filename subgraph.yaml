@@ -42,6 +42,46 @@ dataSources:
         - event: MetaTransactionExecuted(address,address,bytes)
           handler: handleMetaTransactionExecuted
       file: ./src/mana-token.ts
+  - kind: ethereum
+    name: Committee
+    network: matic
+    source:
+      abi: Committee
+      address: "0xaeec95a8aa671a6d3fec56594827d7804964fa70"
+      startBlock: 32800000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - MetaTransaction
+      abis:
+        - name: Committee
+          file: ./abis/Committee.json
+      eventHandlers:
+        - event: MetaTransactionExecuted(address,address,bytes)
+          handler: handleMetaTransactionExecuted
+      file: ./src/committee.ts
+  - kind: ethereum
+    name: MarketplaceV2
+    network: matic
+    source:
+      abi: MarketplaceV2
+      address: "0x480a0f4e360E8964e68858Dd231c2922f1df45Ef"
+      startBlock: 32800000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - MetaTransaction
+      abis:
+        - name: MarketplaceV2
+          file: ./abis/MarketplaceV2.json
+      eventHandlers:
+        - event: MetaTransactionExecuted(address,address,bytes)
+          handler: handleMetaTransactionExecuted
+      file: ./src/marketplace-v2.ts
 templates:
   - name: CollectionV2
     kind: ethereum/contract

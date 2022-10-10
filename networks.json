@@ -7,6 +7,14 @@
     "MANAToken": {
       "address": "0xA1c57f48F0Deb89f569dFbE6E2B7f46D33606fD4",
       "startBlock": 32800000
+    },
+    "Committee": {
+      "address": "0xaeec95a8aa671a6d3fec56594827d7804964fa70",
+      "startBlock": 32800000
+    },
+    "MarketplaceV2": {
+      "address": "0x480a0f4e360E8964e68858Dd231c2922f1df45Ef",
+      "startBlock": 32800000
     }
   }
 }
