@@ -17,4 +17,5 @@ enum ContractName {
   MarketplaceV2
   Bid
   ThirdPartyRegistry
+  CollectionManager
 }

@@ -122,6 +122,26 @@ dataSources:
         - event: MetaTransactionExecuted(address,address,bytes)
           handler: handleMetaTransactionExecuted
       file: ./src/third-party-registry.ts
+  - kind: ethereum
+    name: CollectionManager
+    network: matic
+    source:
+      abi: CollectionManager
+      address: "0x9D32AaC179153A991e832550d9F96441Ea27763A"
+      startBlock: 32800000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - MetaTransaction
+      abis:
+        - name: CollectionManager
+          file: ./abis/CollectionManager.json
+      eventHandlers:
+        - event: MetaTransactionExecuted(address,address,bytes)
+          handler: handleMetaTransactionExecuted
+      file: ./src/collection-manager.ts
 templates:
   - name: CollectionV2
     kind: ethereum/contract
