@@ -3,10 +3,10 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum
-    name: ERC721CollectionFactoryV3
+    name: CollectionFactoryV3
     network: matic
     source:
-      abi: ERC721CollectionFactoryV3
+      abi: CollectionFactoryV3
       address: "0x3195e88aE10704b359764CB38e429D24f1c2f781"
       startBlock: 28121692
     mapping:
@@ -16,18 +16,19 @@ dataSources:
       entities:
         - MetaTransaction
       abis:
-        - name: ERC721CollectionFactoryV3
-          file: ./abis/ERC721CollectionFactoryV3.json
+        - name: CollectionFactoryV3
+          file: ./abis/CollectionFactoryV3.json
       eventHandlers:
         - event: ProxyCreated(indexed address,bytes32)
           handler: handleProxyCreated
-      file: ./src/erc721-collection-factory-v3.ts
-templates:
-  - name: ERC721CollectionV2
-    kind: ethereum/contract
+      file: ./src/collection-factory-v3.ts
+  - kind: ethereum
+    name: MANAToken
     network: matic
     source:
-      abi: ERC721CollectionV2
+      abi: MANAToken
+      address: "0xA1c57f48F0Deb89f569dFbE6E2B7f46D33606fD4"
+      startBlock: 32800000
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -35,9 +36,28 @@ templates:
       entities:
         - MetaTransaction
       abis:
-        - name: ERC721CollectionV2
-          file: ./abis/ERC721CollectionV2.json
+        - name: MANAToken
+          file: ./abis/MANAToken.json
       eventHandlers:
         - event: MetaTransactionExecuted(address,address,bytes)
           handler: handleMetaTransactionExecuted
-      file: ./src/erc721-collection-v2.ts
+      file: ./src/mana-token.ts
+templates:
+  - name: CollectionV2
+    kind: ethereum/contract
+    network: matic
+    source:
+      abi: CollectionV2
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - MetaTransaction
+      abis:
+        - name: CollectionV2
+          file: ./abis/CollectionV2.json
+      eventHandlers:
+        - event: MetaTransactionExecuted(address,address,bytes)
+          handler: handleMetaTransactionExecuted
+      file: ./src/collection-v2.ts

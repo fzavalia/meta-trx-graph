@@ -1,8 +1,12 @@
 {
   "matic": {
-    "ERC721CollectionFactoryV3": {
+    "CollectionFactoryV3": {
       "address": "0x3195e88aE10704b359764CB38e429D24f1c2f781",
       "startBlock": 28121692
+    },
+    "MANAToken": {
+      "address": "0xA1c57f48F0Deb89f569dFbE6E2B7f46D33606fD4",
+      "startBlock": 32800000
     }
   }
 }
