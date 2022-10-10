@@ -82,6 +82,26 @@ dataSources:
         - event: MetaTransactionExecuted(address,address,bytes)
           handler: handleMetaTransactionExecuted
       file: ./src/marketplace-v2.ts
+  - kind: ethereum
+    name: Bid
+    network: matic
+    source:
+      abi: Bid
+      address: "0xb96697FA4A3361Ba35B774a42c58dACcaAd1B8E1"
+      startBlock: 32800000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - MetaTransaction
+      abis:
+        - name: Bid
+          file: ./abis/Bid.json
+      eventHandlers:
+        - event: MetaTransactionExecuted(address,address,bytes)
+          handler: handleMetaTransactionExecuted
+      file: ./src/bid.ts
 templates:
   - name: CollectionV2
     kind: ethereum/contract

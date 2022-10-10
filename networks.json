@@ -15,6 +15,10 @@
     "MarketplaceV2": {
       "address": "0x480a0f4e360E8964e68858Dd231c2922f1df45Ef",
       "startBlock": 32800000
+    },
+    "Bid": {
+      "address": "0xb96697FA4A3361Ba35B774a42c58dACcaAd1B8E1",
+      "startBlock": 32800000
     }
   }
 }

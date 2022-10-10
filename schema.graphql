@@ -15,4 +15,5 @@ enum ContractName {
   MANAToken
   Committee
   MarketplaceV2
+  Bid
 }
