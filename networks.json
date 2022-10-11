@@ -31,6 +31,10 @@
     "CollectionManager": {
       "address": "0x9D32AaC179153A991e832550d9F96441Ea27763A",
       "startBlock": 32800000
+    },
+    "CollectionStore": {
+      "address": "0x214ffC0f0103735728dc66b61A22e4F163e275ae",
+      "startBlock": 32800000
     }
   }
 }
